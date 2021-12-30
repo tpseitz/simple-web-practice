@@ -10,10 +10,10 @@ div#calculator {
   display: grid;
   grid-template-areas:
     'display display display display'
-    '1 2 3 divide'
-    '4 5 6 multiply'
-    '7 8 9 minus'
-    '0 dot eq plus'
+    'b7 b8 b9 divide'
+    'b4 b5 b6 multiply'
+    'b1 b2 b3 minus'
+    'dot b0 eq plus'
   ;
 }
 
@@ -38,6 +38,12 @@ div#calculator button {
 
 div#calculator button.digit     { background: #ccc; }
 div#calculator button.dot       { background: #aaa; }
+div#calculator button.sign      { background: #aaa; }
 div#calculator button.operation { background: #88c; }
-div#calculator button.equals    { background: #c88; }
+div#calculator button.multiply  { background: #88c; }
+div#calculator button.divide    { background: #88c; }
+div#calculator button.equals    { background: #aac; }
+div#calculator button.backspace { background: #caa; }
+div#calculator button.clear     { background: #844; }
+div#calculator button.erase     { background: #a44; }
 
