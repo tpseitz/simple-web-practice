@@ -1,0 +1,43 @@
+div#calculator {
+  width: 300pt;
+  font-family: "Monospace";
+  font-size: 24pt;
+
+  border: solid 1pt #888;
+  padding: 5pt;
+  background: #888;
+
+  display: grid;
+  grid-template-areas:
+    'display display display display'
+    '1 2 3 divide'
+    '4 5 6 multiply'
+    '7 8 9 minus'
+    '0 dot eq plus'
+  ;
+}
+
+#display {
+  display: inline-block;
+  grid-area: display;
+  margin: 3pt;
+  padding: 3pt 7pt;
+  border: solid 1pt #444;
+  background: #fff;
+  text-align: right;
+}
+
+div#calculator button {
+  display: inline-block;
+  border: solid 1pt #444;
+  margin: 3pt;
+  padding: 1pt;
+  font-size: 24pt;
+  padding: 5pt;
+}
+
+div#calculator button.digit     { background: #ccc; }
+div#calculator button.dot       { background: #aaa; }
+div#calculator button.operation { background: #88c; }
+div#calculator button.equals    { background: #c88; }
+

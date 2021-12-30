@@ -1,5 +1,9 @@
 import { useState } from "react";
 import NumberButton from "./NumberButton.js";
+import './Calculator.css';
+
+const BUTTON_LAYOUT = "123/456*789-0.=+";
+
 
 function Calculator() {
   const [current, setCurrent] = useState(null);
@@ -9,7 +13,7 @@ function Calculator() {
       setCurrent, setPrevious, setOperation,
       current, previous, operation };
 
-  const buttons = "123/456*789-0.=+".split("").map(
+  const buttons = BUTTON_LAYOUT.split("").map(
     (num) => <NumberButton {...staticProps} number={num} key={`btn-${num}`} />
   );
 
@@ -18,13 +22,12 @@ function Calculator() {
   console.log(`Values: ${previous} ${operation} ${current} => ${display}`); //XXX
 
   return (
-    <div className="calculator">
+    <div id="calculator">
       <span id="display">{display}</span>
-      <div id="button-panel">
-        {buttons}
-      </div>
+      {buttons}
     </div>
   );
 }
+
 
 export default Calculator;

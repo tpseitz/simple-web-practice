@@ -1,9 +1,14 @@
+const NAME = {
+  '.': 'dot',
+  '=': 'equals',
+};
 const OPERATION = {
   '+': (a, b) => a + b,
   '-': (a, b) => a - b,
   '*': (a, b) => a * b,
   '/': (a, b) => a / b,
 };
+
 
 function NumberButton(props) {
   const { setCurrent, setPrevious, setOperation } = props;
@@ -34,14 +39,13 @@ function NumberButton(props) {
     }
   }
 
-  const className = ("0123456789.".indexOf(number) >= 0 ?
-      "digit" : "operation") + "-button";
+  const cls = NAME[number] ? NAME[number] : (
+    "0123456789".indexOf(number) >= 0 ? "digit" : "operation");
 
-  return <button
-        className={className}
-        onClick={() => handleButtonEvent(number)}>
-    {number}
-  </button>;
+  return (
+    <button className={cls} onClick={() => handleButtonEvent(number)}>
+      {number}
+    </button>);
 }
 
 export default NumberButton;
